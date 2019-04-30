@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LoginContainer from "./containers/LoginContainer";
+import VegContainer from "./containers/VegContainer";
 import "./App.css";
 
 class App extends Component {
@@ -13,10 +14,11 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <h1>Logged In</h1>
-          <h1>Garden Box</h1>
-          <h1>Plant Box</h1>
-          <h1>Plant Image Gallery</h1>
+          <VegContainer />
+          {/* <h1>Logged In</h1> */}
+          {/* <h1>Garden Box</h1> */}
+          {/* <h1>Plant Box</h1> */}
+          {/* <h1>Plant Image Gallery</h1> */}
         </div>
       );
     }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import jwt from "jsonwebtoken";
+import VegetableList from "../components/VegetableList";
 
 export const setUserName = name => {
   return {
@@ -66,8 +67,41 @@ export const getAllUsers = () => {
   };
 };
 
-export const getAllVegetables = () => {
-  return dispatch => {
-    return fetch("/vegetables/vegetables").then(res => res.json(res));
+//something is not working properly here with setting list//
+export const setVegetableList = list => {
+  console.log("actions setVegetavle list", list);
+  return {
+    type: "SET_VEGETABLE_LIST",
+    value: list
   };
 };
+
+// export const setVegetableList = list => {
+//   console.log(actions,"setVegetableList");
+//   return {
+//     type: "SET_VEGETABLE_LIST",
+//     data: JSON.stringify({name})
+//   };
+// };
+
+export const getAllVegetables = () => dispatch => {
+  console.log("getAllVegetables");
+  return axios({
+    url: "/vegetables/vegetables",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => dispatch(setVegetableList(res.data), console.log(res.data)))
+    .catch(err => console.log("error", err));
+};
+//    {
+//     return axios({
+//       url: "/vegetables/vegetables",
+//       method: "GET",
+//     }).then( res =>
+//       dispatch(setVegetableList(res))
+//     );
+//   };
+// };

@@ -9,8 +9,8 @@ const Users = new Schema({
 
 const Vegetables = new Schema({
   name: String,
-  space: String,
-  sunlight: String,
+  planting: String,
+  watering: String,
   soil: String
 });
 

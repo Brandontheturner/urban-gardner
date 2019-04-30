@@ -1,5 +1,6 @@
 export default {
   username: "",
   password: "",
-  loggedIn: false
+  loggedIn: false,
+  vegetableList: []
 };
