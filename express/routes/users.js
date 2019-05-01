@@ -38,7 +38,7 @@ router.put("/:username", isAuthenticated, (req, res) => {
   );
 });
 
-router.get("/:id", (req, res) => {
+router.get("/getUser/:id", (req, res) => {
   UsersController.getUserById(req.params.id)
     .then(result => res.json(result))
     .catch(err => res.status(404).send(err.message));

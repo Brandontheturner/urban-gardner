@@ -14,7 +14,7 @@ const createUser = user => {
   return UsersModel.create({
     username: user.username,
     password: hash,
-    vegetableList: null
+    vegetableList: []
   });
 };
 

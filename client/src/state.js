@@ -2,5 +2,6 @@ export default {
   username: "",
   password: "",
   loggedIn: false,
-  vegetableList: []
+  vegetableList: [],
+  user: {}
 };

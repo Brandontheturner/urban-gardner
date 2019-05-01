@@ -2,21 +2,22 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
-class VegetableList extends Component {
+class UserList extends Component {
   componentDidMount() {
-    this.props.getAllVegetables();
+    this.props.getUserInfo();
   }
 
   render() {
     console.log(this.props);
 
     // return null;
-    if (this.props.vegetableList.length < 1) {
-      return <h2>Loading...</h2>;
+    if (isEmpty(this.props.user)) {
+      return <h2>Checking for user object...</h2>;
     } else {
       return (
+        <h4>{this.props.user.name}</h4>
         <ul>
-          {this.props.vegetableList.map(veggie => {
+          {this.props.user.vegetableList.map(veggie => {
             return <li key={veggie._id}>{veggie.name}</li>;
           })}
           ;
@@ -25,4 +26,4 @@ class VegetableList extends Component {
     }
   }
 }
-export default VegetableList;
+export default UserList;
