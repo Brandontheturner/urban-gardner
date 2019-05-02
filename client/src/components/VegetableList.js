@@ -11,6 +11,7 @@ class VegetableList extends Component {
     console.log(this.props);
 
     // return null;
+    // when user adds veggie to array, then run update, when db updates state also updates
     if (this.props.vegetableList.length < 1) {
       return <h2>Loading...</h2>;
     } else {
@@ -19,7 +20,6 @@ class VegetableList extends Component {
           {this.props.vegetableList.map(veggie => {
             return <li key={veggie._id}>{veggie.name}</li>;
           })}
-          ;
         </ul>
       );
     }

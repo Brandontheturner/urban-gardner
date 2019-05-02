@@ -23,8 +23,14 @@ function loggedIn(state = false, action) {
 
 function vegetableList(state = [], action) {
   console.log("reducers vegetableList", action.value);
-
   if (action.type === "SET_VEGETABLE_LIST") {
+    return action.value;
+  }
+  return state;
+}
+//creating reducer that places the userList into the state of userlist, i think...
+function userList(state = [], action) {
+  if (action.type === "SET_USER_LIST") {
     return action.value;
   }
   return state;
@@ -34,5 +40,6 @@ export default combineReducers({
   username,
   password,
   loggedIn,
-  vegetableList
+  vegetableList,
+  userList
 });

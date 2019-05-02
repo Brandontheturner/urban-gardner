@@ -16,7 +16,7 @@ class App extends Component {
       return (
         <div className="App">
           <VegContainer />
-          <UserContainer />
+          {/* <UserContainer /> */}
           {/* <h1>Logged In</h1> */}
           {/* <h1>Garden Box</h1> */}
           {/* <h1>Plant Box</h1> */}

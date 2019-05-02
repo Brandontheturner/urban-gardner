@@ -68,7 +68,7 @@ export const getAllUsers = () => {
 };
 
 export const setVegetableList = list => {
-  console.log("actions setVegetavle list", list);
+  // console.log("actions setVegetable list", list);
   return {
     type: "SET_VEGETABLE_LIST",
     value: list
@@ -80,6 +80,13 @@ export const setUser = user => {
   return {
     type: "SET_USER",
     value: user
+  };
+};
+//action for exporting the userList and defining the value as list?????//
+export const userList = list => {
+  return {
+    type: "SET_USER_LIST",
+    value: list
   };
 };
 
@@ -106,9 +113,7 @@ export const getAllVegetables = () => dispatch => {
 
 export const getUserInfo = id => {
   console.log("getUserInfo");
-  return axios
-    .get("/api/getUser/" + id)
-    .then(res => dispatch(setUser(res.data.user)));
+  return axios.get("/api/getUser/" + id).then(res => setUser(res.data.user));
 };
 //    {
 //     return axios({

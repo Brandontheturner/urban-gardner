@@ -11,17 +11,19 @@ class UserList extends Component {
     console.log(this.props);
 
     // return null;
-    if (isEmpty(this.props.user)) {
+    if (this.props.user) {
       return <h2>Checking for user object...</h2>;
     } else {
       return (
-        <h4>{this.props.user.name}</h4>
-        <ul>
-          {this.props.user.vegetableList.map(veggie => {
-            return <li key={veggie._id}>{veggie.name}</li>;
-          })}
-          ;
-        </ul>
+        <React.Fragment>
+          console.log("userList");
+          <h4>{this.props.user.name}</h4>
+          <h4>
+            {this.props.user.vegetableList.map(veggie => {
+              return <li key={veggie._id}>{veggie.name}</li>;
+            })}
+          </h4>
+        </React.Fragment>
       );
     }
   }
