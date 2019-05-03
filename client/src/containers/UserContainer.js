@@ -4,7 +4,8 @@ import { getUserInfo } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    UserList: state.UserList
+    UserList: state.UserList,
+    user: state.user
   };
 }
 

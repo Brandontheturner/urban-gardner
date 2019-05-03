@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 
 class UserList extends Component {
   componentDidMount() {
-    this.props.getUserInfo();
+    // this.props.getUserInfo();
   }
 
   render() {
@@ -16,13 +16,12 @@ class UserList extends Component {
     } else {
       return (
         <React.Fragment>
-          console.log("userList");
           <h4>{this.props.user.name}</h4>
-          <h4>
+          {/* <h4>
             {this.props.user.vegetableList.map(veggie => {
               return <li key={veggie._id}>{veggie.name}</li>;
             })}
-          </h4>
+          </h4> */}
         </React.Fragment>
       );
     }

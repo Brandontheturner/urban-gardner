@@ -6,6 +6,12 @@ function username(state = "", action) {
   }
   return state;
 }
+function user(state = {}, action) {
+  if (action.type === "SET_USER") {
+    return action.value;
+  }
+  return state;
+}
 
 function password(state = "", action) {
   if (action.type === "SET_PASSWORD") {
@@ -41,5 +47,6 @@ export default combineReducers({
   password,
   loggedIn,
   vegetableList,
-  userList
+  userList,
+  user
 });
